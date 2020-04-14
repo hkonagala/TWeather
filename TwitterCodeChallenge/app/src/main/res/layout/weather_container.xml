@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/cloudiness_image"
+        android:layout_width="98dp"
+        android:layout_height="98dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/location_name_tv"
+        android:tint="@color/colorPrimaryDark"
+        android:importantForAccessibility="no" />
+
+    <TextView
+        android:id="@+id/location_name_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/cloudiness_image"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/temperature_label_tv"
+        android:gravity="center"
+        android:textSize="36sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/temperature_label_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/temperature_tv"
+        app:layout_constraintTop_toBottomOf="@id/location_name_tv"
+        app:layout_constraintBottom_toTopOf="@id/windSpeed_label_tv"
+        android:gravity="left"/>
+
+    <TextView
+        android:id="@+id/temperature_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/location_name_tv"
+        app:layout_constraintLeft_toRightOf="@id/temperature_label_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/wind_speed_tv"
+        android:gravity="right"/>
+
+    <TextView
+        android:id="@+id/windSpeed_label_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/wind_speed_tv"
+        app:layout_constraintTop_toBottomOf="@id/temperature_label_tv"
+        app:layout_constraintStart_toStartOf="@id/temperature_label_tv"
+        app:layout_constraintBottom_toTopOf="@id/fetch_weather_button"
+        android:gravity="left"/>
+
+
+    <TextView
+        android:id="@+id/wind_speed_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/temperature_tv"
+        app:layout_constraintLeft_toLeftOf="@id/windSpeed_label_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@id/temperature_tv"
+        app:layout_constraintBottom_toTopOf="@id/fetch_weather_button"
+        android:gravity="right" />
+
+    <Button
+        android:id="@+id/fetch_weather_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/wind_speed_tv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/fetch_weather"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:foreground="?android:attr/selectableItemBackground"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
